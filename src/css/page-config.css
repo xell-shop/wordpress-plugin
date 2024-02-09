@@ -1,0 +1,56 @@
+.form-login{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    min-height: 80vh;
+}
+.btn-connect{
+	border: 0;
+	padding: 20px 60px;
+	border-radius: 35px;
+	background-image: linear-gradient(to left, #2f1071, #22cc8c);
+	cursor: pointer;
+	color: white;
+	font-size: 20px;
+	font-weight: 700;
+}
+.btn-connect:hover{
+    filter: brightness(0.9);
+}
+
+img.status{
+	width: min(100%,100px);  
+}
+.msg-status{
+	font-size: 20px;
+	font-weight: 700;
+}
+.msg-ok{
+	color:#22cc8c;
+}
+.msg-error{
+	color:#fc2f2f;
+}
+.form-disconnect{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.btn-disconnect{
+	border: 0;
+	padding: 20px 60px;
+	border-radius: 35px;
+	background-image: linear-gradient(to left, #fc3838, #cc2222);
+	cursor: pointer;
+	color: rgb(235, 235, 235);
+	font-size: 20px;
+	font-weight: 700;
+}
+.btn-disconnect:hover{
+    filter: brightness(0.9);
+}
