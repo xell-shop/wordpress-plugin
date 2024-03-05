@@ -13,11 +13,11 @@ Xell es un plugin que usa el plugin "Connect Woocommerce with your api" para con
 
 3) Go to Plugins > Add New > Upload Plugin 
 
-![alt install](https://gitlab.com/franciscoblancojn/xell-wordpress/-/raw/develop/tutorial/install.png)
+![alt install](https://raw.githubusercontent.com/xell-shop/wordpress-plugin/master/tutorial/install.png)
 
 4) Upload File > Active Plugin 
 
-![alt active](https://gitlab.com/franciscoblancojn/xell-wordpress/-/raw/develop/tutorial/active.png)
+![alt active](https://raw.githubusercontent.com/xell-shop/wordpress-plugin/master/tutorial/active.png)
 
 # Connect
 
@@ -25,7 +25,12 @@ Xell es un plugin que usa el plugin "Connect Woocommerce with your api" para con
 
 2) Go to Xell and Connect
 
-![alt connect](https://gitlab.com/franciscoblancojn/xell-wordpress/-/raw/develop/tutorial/connect.png)
+![alt connect](https://raw.githubusercontent.com/xell-shop/wordpress-plugin/master/tutorial/connect.png)
+
+
+# Code
+
+[https://github.com/xell-shop/wordpress-plugin](https://github.com/xell-shop/wordpress-plugin)
 
 
 Copyright (C) 1989, 1991 Free Software Foundation, Inc.  

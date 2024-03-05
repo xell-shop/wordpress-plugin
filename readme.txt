@@ -35,3 +35,6 @@ https://xell.shop/
 
 == Screenshots ==
 1. xell-connect.png
+
+== Code ==
+https://github.com/xell-shop/wordpress-plugin
