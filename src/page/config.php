@@ -67,12 +67,8 @@ function XELL_settings_page() {
     $GET_disconnect = sanitize_text_field($_GET["disconnect"]);
 
     if($GET_token){
-        XELL_saveApi($GET_token);
-        ?>
-        <script>
-            window.location = `<?php echo menu_page_url("XELL_config",false);?>`
-        </script>
-        <?php
+        XELL_saveApi($GET_token); 
+        header("Location: ".menu_page_url("XELL_config",false));
         exit;
     }
     if($GET_error){
@@ -98,7 +94,6 @@ function XELL_settings_page() {
     $name = get_bloginfo();
 
     ?>
-	<link rel="stylesheet" href="<?php echo esc_attr(XELL_URL  ."src/css/page-config.css?v=". XELL_get_version());?>">
     <div class="wrap page-config-XELL">
 		<form method="get" class="form-login" action="<?php echo esc_attr(XELL_URL_CONNECT);?>">
             <input type="hidden" name="name" value="<?php echo esc_attr($name);?>">
