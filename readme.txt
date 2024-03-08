@@ -19,6 +19,9 @@ https://xell.shop/
 
 == Changelog ==
 
+= 1.0.2 =
+* Se corrigio la informacion del plugin.
+
 = 1.0.1 =
 * Se corrigio la informacion del plugin.
 
