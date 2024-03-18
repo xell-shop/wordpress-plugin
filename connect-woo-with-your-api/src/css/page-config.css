@@ -1,0 +1,58 @@
+.page-config-CWWYA .apis .api {
+  display: flex;
+  column-gap: 35px;
+
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+.page-config-CWWYA .apis .api:not(:last-child) {
+  border-bottom: 2px solid #ababab;
+}
+.page-config-CWWYA .api h3 {
+  margin: 0;
+}
+.page-config-CWWYA .api .permissions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+.page-config-CWWYA .input-api-permission ,
+.page-config-CWWYA .active-plugin{
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  column-gap: 15px;
+  margin-bottom: 10px;
+}
+.page-config-CWWYA .input-api-permission .permission-api,
+.page-config-CWWYA .active-plugin .text {
+  margin: 0;
+}
+.page-config-CWWYA .contentBtns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-config-CWWYA .delete-api-submit {
+  display: none;
+}
+.page-config-CWWYA .delete-api.delete-api {
+  background: #f52525;
+  border: 0;
+  color: white;
+  font-weight: bold;
+}
+
+.page-config-CWWYA .separadorSecctions{
+  margin-top: 50px;
+  color:#1d2327;
+  border-top: 10px solid ;
+  margin-bottom: 50px;
+  box-shadow: 100px 0, -100px 0;
+}
+.page-config-CWWYA h1{
+   margin: 0;
+   margin-bottom: 50px;
+}
