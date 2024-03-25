@@ -7,7 +7,7 @@ function CWWYA_deleteUser($user_id)
     if(!$user){
         throw new Exception("User id [".$user_id."] Not Exist");
     }
-    $user = json_decode(json_encode($user),true);
+    $user = json_decode(wp_json_encode($user),true);
     if(!in_array("customer",$user["roles"])){
         throw new Exception("User id [".$user_id."] Not Exist");
     }
@@ -21,7 +21,7 @@ function CWWYA_deleteUser($user_id)
 }
 function CWWYA_deleteUsers()
 {
-    $user_id = $_POST["user_id"];
+    $user_id = CWWYA_getPOST()["user_id"];
     if( empty( $user_id) ) {
         throw new Exception('user id Required');
     }

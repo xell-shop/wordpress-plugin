@@ -20,11 +20,11 @@ function register_CWWYA_settings() {
 
 function CWWYA_settings_page() {
 
-	if($_POST['delete-api']!=null){
-		CWWYA_deleteApi(intval($_POST['delete-api']));
+	if(CWWYA_getPOST()['delete-api']!=null){
+		CWWYA_deleteApi(intval(CWWYA_getPOST()['delete-api']));
 	}
 
-	CWWYA_saveConfigAndApis($_POST);
+	CWWYA_saveConfigAndApis(CWWYA_getPOST());
 
 	$defaults = CWWYA_getConfigDefault();
 
@@ -35,7 +35,7 @@ function CWWYA_settings_page() {
 	$config = CWWYA_joinArrayObject($configDefault,$config);
     ?>
 
-    <div id="page-config-CWWYA" class="wrap page-config-CWWYA" data-n-items-apis="<?=count($apis)?>">
+    <div id="page-config-CWWYA" class="wrap page-config-CWWYA" data-n-items-apis="<?php echo count($apis)?>">
 		<form method="post">
 			<div class="config">
 				<h1>
@@ -43,7 +43,7 @@ function CWWYA_settings_page() {
 				</h1>	
 				<label class="active-plugin">
         			<h3 class="text">Active</h3>
-					<input type="checkbox" <?=$config["active"]?"checked":""?> name="config[active]" id="config[active]"/>
+					<input type="checkbox" <?php echo $config["active"]?"checked":""?> name="config[active]" id="config[active]"/>
 				</label>
 			</div>
 			<div class="separadorSecctions"></div>
@@ -71,24 +71,24 @@ function CWWYA_settings_page() {
 			</h1>
 			<h3>Orders</h3>
 			<ul>
-				<li><?=CWWYA_URL?>src/routes/orders/view.php</li>
-				<li><?=CWWYA_URL?>src/routes/orders/create.php</li>
-				<li><?=CWWYA_URL?>src/routes/orders/update.php</li>
-				<li><?=CWWYA_URL?>src/routes/orders/delete.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/orders/view.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/orders/create.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/orders/update.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/orders/delete.php</li>
 			</ul>
 			<h3>Products</h3>
 			<ul>
-				<li><?=CWWYA_URL?>src/routes/products/view.php</li>
-				<li><?=CWWYA_URL?>src/routes/products/create.php</li>
-				<li><?=CWWYA_URL?>src/routes/products/update.php</li>
-				<li><?=CWWYA_URL?>src/routes/products/delete.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/products/view.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/products/create.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/products/update.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/products/delete.php</li>
 			</ul>
 			<h3>Users</h3>
 			<ul>
-				<li><?=CWWYA_URL?>src/routes/users/view.php</li>
-				<li><?=CWWYA_URL?>src/routes/users/create.php</li>
-				<li><?=CWWYA_URL?>src/routes/users/update.php</li>
-				<li><?=CWWYA_URL?>src/routes/users/delete.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/users/view.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/users/create.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/users/update.php</li>
+				<li><?php echo esc_html(CWWYA_URL);?>src/routes/users/delete.php</li>
 			</ul>
 		</div>
     </div>

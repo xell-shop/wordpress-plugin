@@ -6,7 +6,7 @@ header('Content-Type: application/json; charset=utf-8');
 if(isset($data)){
     $_POST = $data;
 }
-$token = $_POST["token"];
+$token = CWWYA_getPOST()["token"];
 
 try {
     CWWYA_validateConfigActive();
@@ -19,12 +19,12 @@ try {
     }
     $result = $run();
 
-    echo json_encode(array(
+    echo wp_json_encode(array(
         "status" => 200,
         "data" => $result,
     ));
 } catch (Exception $e) {
-    echo json_encode(array(
+    echo wp_json_encode(array(
         "status" => 400,
         "data" => $e->getMessage()
     ));

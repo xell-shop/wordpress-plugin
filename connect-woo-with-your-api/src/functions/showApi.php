@@ -2,15 +2,15 @@
  if ( ! defined( 'ABSPATH' ) ) exit;
 function CWWYA_showApi($api , $i =0){
     ?>
-        <div class="api <?=$api["active"]?"active":""?> ">
+        <div class="api <?php echo esc_html($api["active"]?"active":"")?> ">
             <label class="input-api">
                 <h3 class="name-api">Name</h3>
                 <input 
                     type="text" 
                     class="input-name-api" 
-                    name="api[<?=$i?>][name]" 
-                    id="api[<?=$i?>][name]"
-                    value="<?=$api["name"]?>"
+                    name="api[<?php echo esc_html($i)?>][name]" 
+                    id="api[<?php echo esc_html($i)?>][name]"
+                    value="<?php echo esc_html($api["name"])?>"
                 >
             </label>
             <label class="input-api">
@@ -18,9 +18,9 @@ function CWWYA_showApi($api , $i =0){
                 <input 
                     type="text" 
                     class="input-url-api" 
-                    name="api[<?=$i?>][url]" 
-                    id="api[<?=$i?>][url]"
-                    value="<?=$api["url"]?>"
+                    name="api[<?php echo esc_html($i)?>][url]" 
+                    id="api[<?php echo esc_html($i)?>][url]"
+                    value="<?php echo esc_html($api["url"])?>"
                 >
             </label>
             <label class="input-api">
@@ -28,9 +28,9 @@ function CWWYA_showApi($api , $i =0){
                 <input 
                     type="text" 
                     class="input-token-api" 
-                    name="api[<?=$i?>][token]" 
-                    id="api[<?=$i?>][token]"
-                    value="<?=$api["token"]?>"
+                    name="api[<?php echo esc_html($i)?>][token]" 
+                    id="api[<?php echo esc_html($i)?>][token]"
+                    value="<?php echo esc_html($api["token"])?>"
                 >
             </label>
             <div class="permissions">
@@ -44,7 +44,7 @@ function CWWYA_showApi($api , $i =0){
                 ?>
             </div>
             <div class="contentDelete">
-                <input type="submit" class="delete-api-submit" value="<?=$i?>" name="delete-api" id="delete-api"/>
+                <input type="submit" class="delete-api-submit" value="<?php echo esc_html($i)?>" name="delete-api" id="delete-api"/>
                 <button class="button delete delete-api">Delete</button>
             </div>
         </div>

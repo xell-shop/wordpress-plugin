@@ -44,7 +44,7 @@ function CWWYA_getUser($user_id)
     if($user === false){
         throw new Exception('User_id invalid');
     }
-    $user = json_decode(json_encode($user),true);
+    $user = json_decode(wp_json_encode($user),true);
     unset($user["data"]["user_pass"]);
     unset($user["data"]["user_activation_key"]);
     $user["data"]["id"] = $user_id;

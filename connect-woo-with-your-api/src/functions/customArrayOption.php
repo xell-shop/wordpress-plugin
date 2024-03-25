@@ -13,7 +13,7 @@ function CWWYA_get_option($id = "option")
 
 function CWWYA_set_option($id,$newItem)
 {
-    update_option("CWWYA_".$id,json_encode($newItem));
+    update_option("CWWYA_".$id,wp_json_encode($newItem));
 }
 function CWWYA_put_option($id,$newItem)
 {
@@ -22,5 +22,5 @@ function CWWYA_put_option($id,$newItem)
         "date" => date("c"),
         "data" => $newItem,
     );
-    update_option("CWWYA_".$id,json_encode($CWWYA_option));
+    update_option("CWWYA_".$id,wp_json_encode($CWWYA_option));
 }

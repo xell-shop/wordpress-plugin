@@ -4,7 +4,7 @@ Plugin Name: Xell Shop
 Plugin URI: https://gitlab.com/xell-shop/wordpress-plugin-connector
 Description: Este conector posibilita la sincronización del inventario desde tu tienda en XELL directamente con esta plataforma de comercio virtual. De esta manera, puedes reflejar de forma precisa y en tiempo real el estado de tus existencias, asegurando una gestión eficiente y una experiencia de compra óptima para tus clientes.
 Author: xell-shop
-Version: 1.1.0
+Version: 1.1.1
 Author URI: https://xell.shop/
 License: GPLv2 or later
  */

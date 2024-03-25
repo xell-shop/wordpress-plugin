@@ -3,7 +3,7 @@ Contributors: xellshop
 Tags: xell
 Requires at least: 4.7
 Tested up to: 6.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -18,6 +18,9 @@ Xell es un plugin que usa el plugin "Connect Woocommerce with your api" para con
 https://xell.shop/
 
 == Changelog ==
+
+= 1.1.1 =
+* Cambios en Connect Woo with your api.
 
 = 1.1.0 =
 * Se agrego internamente el plugin Connect Woo with your api.

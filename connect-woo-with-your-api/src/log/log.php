@@ -30,7 +30,7 @@ if(CWWYA_LOG){
         $log = array_reverse($log);
         ?>
         <script>
-            const log = <?=json_encode($log)?>;
+            const log = <?php echo wp_json_encode($log)?>;
         </script>
         <h1>
             Log de CWWYA

@@ -161,7 +161,7 @@ function CWWYA_createProduct_Simple($newProduct = [],$type="simple")
             if($img){
                 $product->set_image_id( $img["attachment_id"] );
             }
-            update_post_meta($newProduct["product_id"],"img",json_encode($img));
+            update_post_meta($newProduct["product_id"],"img",wp_json_encode($img));
         }
 
         if($newProduct["gallery_image"]!=null && !empty($newProduct["gallery_image"])){
@@ -171,7 +171,7 @@ function CWWYA_createProduct_Simple($newProduct = [],$type="simple")
                 $img = CWWYA_upload_image($imgGalery[$i]);  
                 $imgGaleryUse[] = $img["attachment_id"];
             }
-            update_post_meta($newProduct["product_id"],"gallery_image".$i,json_encode($imgGaleryUse));
+            update_post_meta($newProduct["product_id"],"gallery_image".$i,wp_json_encode($imgGaleryUse));
             $product->set_gallery_image_ids( $imgGaleryUse ); 
         }
 
@@ -292,7 +292,7 @@ function CWWYA_createProduct_Variable($newProduct = [])
         }
         $result["variations"][] = $newVariationReturn;
     }
-    update_post_meta($parent_id,"variations_CWWYA",json_encode($result["variations"]));
+    update_post_meta($parent_id,"variations_CWWYA",wp_json_encode($result["variations"]));
     return $result;
 }
 function CWWYA_postProduct($newProduct){
@@ -315,7 +315,7 @@ function CWWYA_postProduct($newProduct){
 
 function CWWYA_postProducts()
 {
-    $newProducts = $_POST["products"];
+    $newProducts = CWWYA_getPOST()["products"];
     CWWYA_validate_postProducts($newProducts);
 
     $result = [];

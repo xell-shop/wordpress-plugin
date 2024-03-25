@@ -240,7 +240,7 @@ function CWWYA_postOrder($order)
 }
 function CWWYA_postOrders()
 {
-    $newOrders = $_POST["orders"];
+    $newOrders = CWWYA_getPOST()["orders"];
     CWWYA_validate_postOrders($newOrders);
     $orders = [];
     for ($i=0; $i < count($newOrders); $i++) { 
