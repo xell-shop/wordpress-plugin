@@ -1,8 +1,19 @@
 <?php
 
-$permission = "product_create";
+if ( ! defined( 'ABSPATH' ) ) exit;
 
-$run = "CWWYA_postProducts";
+function CWWYA_router_product_create() {
+    $permission = "product_create";
+    $run = "CWWYA_postProducts";
+    return CWWYA_router_base($permission,$run);
+}
 
+function CWWYA_on_load_router_product_create()
+{
+    register_rest_route( 'cwwya', 'products/create', array(
+      'methods' => 'POST',
+      'callback' => 'CWWYA_router_product_create',
+    ) );
+}
 
-require_once "../base.php";
+add_action( 'rest_api_init', 'CWWYA_on_load_router_product_create' );

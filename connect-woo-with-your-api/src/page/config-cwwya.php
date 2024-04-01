@@ -33,6 +33,9 @@ function CWWYA_settings_page() {
 	$config = CWWYA_get_option("config");
 	$apis = CWWYA_get_option("apis");
 	$config = CWWYA_joinArrayObject($configDefault,$config);
+
+	$URL = get_site_url() . "/?rest_route=/cwwya/";
+
     ?>
 
     <div id="page-config-CWWYA" class="wrap page-config-CWWYA" data-n-items-apis="<?php echo count($apis)?>">
@@ -71,24 +74,24 @@ function CWWYA_settings_page() {
 			</h1>
 			<h3>Orders</h3>
 			<ul>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/orders/view.php</li>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/orders/create.php</li>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/orders/update.php</li>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/orders/delete.php</li>
+				<li><?php echo esc_html($URL);?>orders/view</li>
+				<li><?php echo esc_html($URL);?>orders/create</li>
+				<li><?php echo esc_html($URL);?>orders/update</li>
+				<li><?php echo esc_html($URL);?>orders/delete</li>
 			</ul>
 			<h3>Products</h3>
 			<ul>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/products/view.php</li>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/products/create.php</li>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/products/update.php</li>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/products/delete.php</li>
+				<li><?php echo esc_html($URL);?>products/view</li>
+				<li><?php echo esc_html($URL);?>products/create</li>
+				<li><?php echo esc_html($URL);?>products/update</li>
+				<li><?php echo esc_html($URL);?>products/delete</li>
 			</ul>
 			<h3>Users</h3>
 			<ul>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/users/view.php</li>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/users/create.php</li>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/users/update.php</li>
-				<li><?php echo esc_html(CWWYA_URL);?>src/routes/users/delete.php</li>
+				<li><?php echo esc_html($URL);?>users/view</li>
+				<li><?php echo esc_html($URL);?>users/create</li>
+				<li><?php echo esc_html($URL);?>users/update</li>
+				<li><?php echo esc_html($URL);?>users/delete</li>
 			</ul>
 		</div>
     </div>
