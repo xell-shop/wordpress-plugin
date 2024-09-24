@@ -38,7 +38,8 @@ if(!is_plugin_active( 'woocommerce/woocommerce.php' )){
     define("XELL_PATH",plugin_dir_path(__FILE__));
     define("XELL_URL",plugin_dir_url(__FILE__));
     define("XELL_URL_API","http://api.beta.xell.shop");
-    define("XELL_URL_CONNECT","https://beta.xell.shop/configuraciones/cms/wordpress/connect/api");
+    define("XELL_URL_CONNECT","https://beta.xell.shop/es/configuraciones/cms/wordpress/conectar/api");
+    // define("XELL_URL_CONNECT","http://localhost:3000/es/configuraciones/cms/wordpress/conectar/api");
 
     if(!is_plugin_active( 'connect-woocommerce-with-your-api/connect-woocommerce-with-your-api.php' ) && !is_plugin_active( 'connect-woocommerce-with-your-api-master/connect-woocommerce-with-your-api.php' )){
     
