@@ -62,7 +62,7 @@ function CWWYA_postUser($user)
 
 function CWWYA_postUsers()
 {
-    $newUsers = CWWYA_getPOST()["users"];
+    $newUsers = CWWYA_getPOST("users");
     CWWYA_validate_postUsers($newUsers);
     $users = [];
     for ($i=0; $i < count($newUsers); $i++) { 

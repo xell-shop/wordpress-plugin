@@ -68,7 +68,7 @@ class CWWYA_api
         );
         try {
             $result = $this->request($dataSend);
-            addCWWYA_LOG(array(
+            CWWYA_LOG_add(array(
                 "api" => $this->NAME,
                 "url" => $this->URL,
                 "CWWYA_URL" => CWWYA_URL,
@@ -82,7 +82,7 @@ class CWWYA_api
                 "data" => $result
             );
         } catch (\Throwable $th) {
-            addCWWYA_LOG(array(
+            CWWYA_LOG_add(array(
                 "api" => $this->NAME,
                 "type" => "error",
                 "error" => json_decode(wp_json_encode($th),true),

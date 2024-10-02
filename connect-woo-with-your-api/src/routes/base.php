@@ -1,12 +1,13 @@
 <?php
 
 function CWWYA_router_base($permission,$run) {
+    //file_get_contents It is necesary for get all data in api body
     $data = CWWYA_sanitizeObj(json_decode(file_get_contents('php://input'), true));
     header('Content-Type: application/json; charset=utf-8');
     if(isset($data)){
         $_POST = $data;
     }
-    $token = CWWYA_getPOST()["token"];
+    $token = CWWYA_getPOST("token");
 
     try {
         CWWYA_validateConfigActive();

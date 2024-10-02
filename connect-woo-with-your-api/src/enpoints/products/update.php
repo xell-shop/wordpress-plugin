@@ -2,7 +2,7 @@
 
 function CWWYA_putProducts()
 {
-    $products = CWWYA_getPOST()["products"];
+    $products = CWWYA_getPOST("products");
     if( empty($products) ) {
         throw new Exception('Products Required');
     }

@@ -16,7 +16,7 @@ function CWWYA_deleteOrder($order_id)
 }
 function CWWYA_deleteOrders()
 {
-    $order_id = CWWYA_getPOST()["order_id"];
+    $order_id = CWWYA_getPOST("order_id");
     if( empty( $order_id) ) {
         throw new Exception('Order id Required');
     }

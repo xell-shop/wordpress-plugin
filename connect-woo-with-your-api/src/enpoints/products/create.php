@@ -315,7 +315,7 @@ function CWWYA_postProduct($newProduct){
 
 function CWWYA_postProducts()
 {
-    $newProducts = CWWYA_getPOST()["products"];
+    $newProducts = CWWYA_getPOST("products");
     CWWYA_validate_postProducts($newProducts);
 
     $result = [];

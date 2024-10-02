@@ -13,9 +13,7 @@ add_action('admin_menu', 'XELL_create_menu');
 
 function XELL_register_settings() {
 	//register our settings
-	register_setting( 'XELL-settings-group', 'new_option_name' );
-	register_setting( 'XELL-settings-group', 'some_other_option' );
-	register_setting( 'XELL-settings-group', 'option_etc' );
+	register_setting( 'XELL-settings-group', 'XELL-settings-name' );
 }
 
 function XELL_saveApi($token)

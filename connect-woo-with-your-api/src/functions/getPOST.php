@@ -2,9 +2,10 @@
 
 
 if ( ! defined( 'ABSPATH' ) ) exit;
-function CWWYA_getPOST(){
+function CWWYA_getPOST($key){
     try{
-        return CWWYA_sanitizeObj($_POST);
+        // $_POST It is necesary for get all data in api body
+        return CWWYA_sanitizeObj($_POST[$key]);
     } catch (\Throwable $th) {
         return [];
     }

@@ -1,7 +1,7 @@
 <?php
  if ( ! defined( 'ABSPATH' ) ) exit;
 if(CWWYA_LOG){
-    function add_CWWYA_LOG_option_page($admin_bar)
+    function CWWYA_LOG_add_option_page($admin_bar)
     {
         global $pagenow;
         $admin_bar->add_menu(
@@ -37,13 +37,13 @@ if(CWWYA_LOG){
         <pre><?php var_dump($log);?></pre>
         <?php
     }
-    add_action('admin_bar_menu', 'add_CWWYA_LOG_option_page', 100);
+    add_action('admin_bar_menu', 'CWWYA_LOG_add_option_page', 100);
 
     add_action('admin_menu', 'CWWYA_LOG_option_page');
 
 }
 
-function addCWWYA_LOG($newLog)
+function CWWYA_LOG_add($newLog)
 {
     if(!CWWYA_LOG){
         return;
