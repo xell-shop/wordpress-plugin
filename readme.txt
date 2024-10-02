@@ -2,7 +2,7 @@
 Contributors: xellshop
 Tags: xell
 Requires at least: 4.7
-Tested up to: 6.4
+Tested up to: 6
 Stable tag: 1.1.2
 Requires PHP: 7.0
 License: GPLv2 or later

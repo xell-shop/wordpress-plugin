@@ -1,6 +1,7 @@
 <?php
 
 if ( ! defined( 'ABSPATH' ) ) exit;
+require_once CWWYA_PATH . "src/functions/sanitizeObj.php";
 require_once CWWYA_PATH . "src/functions/joinArrayObject.php";
 require_once CWWYA_PATH . "src/functions/customArrayOption.php";
 require_once CWWYA_PATH . "src/functions/getConfigDefault.php";

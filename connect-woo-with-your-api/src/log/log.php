@@ -28,10 +28,9 @@ if(CWWYA_LOG){
     {
         $log = CWWYA_get_option("log");
         $log = array_reverse($log);
+
+        wp_add_inline_script("CWWYA-log","const log =".wp_json_encode($log).";")
         ?>
-        <script>
-            const log = <?php echo wp_json_encode($log)?>;
-        </script>
         <h1>
             Log de CWWYA
         </h1>
