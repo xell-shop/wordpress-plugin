@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function CWWYA_router_order_view(WP_REST_Request $request) {
     $permission = "order_ready";
     $run = "CWWYA_getOrders";
-    $data = CWWYA_sanitizeObj(json_decode($request->get_body(), true));
+    $data = (json_decode($request->get_body(), true));
     return CWWYA_router_base($permission,$run,$data);
 }
 

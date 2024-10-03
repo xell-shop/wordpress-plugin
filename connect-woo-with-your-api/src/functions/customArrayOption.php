@@ -19,7 +19,7 @@ function CWWYA_put_option($id,$newItem)
 {
     $CWWYA_option = CWWYA_get_option($id);
     $CWWYA_option[] = array(
-        "date" => date("c"),
+        "date" => gmdate("c"),
         "data" => $newItem,
     );
     update_option("CWWYA_".$id,wp_json_encode($CWWYA_option));

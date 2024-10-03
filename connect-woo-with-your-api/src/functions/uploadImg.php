@@ -1,11 +1,14 @@
 <?php
- if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) exit;
+ 
 function CWWYA_upload_image($image_url, $attach_to_post = 0, $add_to_media = true )  {
-	$remote_image = fopen($image_url, 'r');
 	
+	$remote_image = fopen($image_url, 'r');
+
 	if ( !$remote_image ) return false;
 	
 	$meta = stream_get_meta_data( $remote_image );
+	
 	
 	$image_meta = false;
 	$image_filetype = false;
@@ -28,7 +31,7 @@ function CWWYA_upload_image($image_url, $attach_to_post = 0, $add_to_media = tru
 		$path = $v;
 	}else{
 		// Short filenames should use the path from the URL (not domain)
-		$url_parsed = parse_url( $image_url );
+		$url_parsed = wp_parse_url( $image_url );
 		$path = isset($url_parsed['path']) ? $url_parsed['path'] : $image_url;
 	}
 	

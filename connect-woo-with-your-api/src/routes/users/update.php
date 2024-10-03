@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function CWWYA_router_user_update(WP_REST_Request $request) {
     $permission = "user_update";
     $run = "CWWYA_putUsers";
-    $data = CWWYA_sanitizeObj(json_decode($request->get_body(), true));
+    $data = (json_decode($request->get_body(), true));
     return CWWYA_router_base($permission,$run,$data);
 }
 
