@@ -5,16 +5,10 @@ function XELL_create_menu() {
 	//create new top-level menu
 	add_menu_page('XELL Settings', 'Xell', 'administrator', "XELL_config", 'XELL_settings_page' ,XELL_URL."src/img/icon.png" );
 
-	//call register settings function
-	add_action( 'admin_init', 'XELL_register_settings' );
 }
 add_action('admin_menu', 'XELL_create_menu');
 
 
-function XELL_register_settings() {
-	//register our settings
-	register_setting( 'XELL-settings-group', 'XELL-settings-name' );
-}
 
 function XELL_saveApi($token)
 {

@@ -5,16 +5,9 @@ function CWWYA_create_menu() {
 	//create new top-level menu
 	add_menu_page('Connect Woocommerce with your api Settings', 'Connect Woocommerce with your api', 'administrator', "CWWYA_config", 'CWWYA_settings_page'  );
 
-	//call register settings function
-	add_action( 'admin_init', 'CWWYA_register_settings' );
 }
 add_action('admin_menu', 'CWWYA_create_menu');
 
-
-function CWWYA_register_settings() {
-	//register our settings
-	register_setting( 'CWWYA-settings-group', 'CWWYA-settings-name' );
-}
 
 function CWWYA_settings_page() {
 

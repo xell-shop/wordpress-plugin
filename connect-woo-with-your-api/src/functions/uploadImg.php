@@ -2,7 +2,6 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
  
 function CWWYA_upload_image($image_url, $attach_to_post = 0, $add_to_media = true )  {
-	
 	$remote_image = fopen($image_url, 'r');
 
 	if ( !$remote_image ) return false;
@@ -71,7 +70,7 @@ function CWWYA_upload_image($image_url, $attach_to_post = 0, $add_to_media = tru
 	) );
 	
 	fclose( $tmp ); // Close tmp file
-	@unlink( $tmp_path ); // Delete the tmp file. Closing it should also delete it, so hide any warnings with @
+	wp_delete_file( $tmp_path ); // Delete the tmp file. Closing it should also delete it, so hide any warnings with @
 	unset( $_FILES[basename( $tmp_path )] ); // Clean up our $_FILES mess.
 	
 	fclose( $remote_image ); // Close the opened image resource
