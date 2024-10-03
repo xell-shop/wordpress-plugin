@@ -11,7 +11,7 @@ function CWWYA_router_user_create(WP_REST_Request $request) {
 
 function CWWYA_on_load_router_user_create()
 {
-    register_rest_route( 'cwwya', 'users/create', array(
+    register_rest_route( CWWYA_RUTE, 'users/create', array(
       'methods' => 'POST',
       'callback' => 'CWWYA_router_user_create',
     ) );

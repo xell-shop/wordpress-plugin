@@ -11,7 +11,7 @@ function CWWYA_router_order_create(WP_REST_Request $request) {
 
 function CWWYA_on_load_router_order_create()
 {
-    register_rest_route( 'cwwya', 'orders/create', array(
+    register_rest_route( CWWYA_RUTE, 'orders/create', array(
       'methods' => 'POST',
       'callback' => 'CWWYA_router_order_create',
     ) );

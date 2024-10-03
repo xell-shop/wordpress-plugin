@@ -11,7 +11,7 @@ function CWWYA_router_order_update(WP_REST_Request $request) {
 
 function CWWYA_on_load_router_order_update()
 {
-    register_rest_route( 'cwwya', 'orders/update', array(
+    register_rest_route( CWWYA_RUTE, 'orders/update', array(
       'methods' => 'POST',
       'callback' => 'CWWYA_router_order_update',
     ) );

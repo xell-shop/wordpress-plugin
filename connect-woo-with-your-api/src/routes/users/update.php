@@ -11,7 +11,7 @@ function CWWYA_router_user_update(WP_REST_Request $request) {
 
 function CWWYA_on_load_router_user_update()
 {
-    register_rest_route( 'cwwya', 'users/update', array(
+    register_rest_route( CWWYA_RUTE, 'users/update', array(
       'methods' => 'POST',
       'callback' => 'CWWYA_router_user_update',
     ) );

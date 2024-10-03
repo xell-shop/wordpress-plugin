@@ -11,7 +11,7 @@ function CWWYA_router_order_view(WP_REST_Request $request) {
 
 function CWWYA_on_load_router_order_view()
 {
-    register_rest_route( 'cwwya', 'orders/view', array(
+    register_rest_route( CWWYA_RUTE, 'orders/view', array(
       'methods' => 'POST',
       'callback' => 'CWWYA_router_order_view',
     ) );

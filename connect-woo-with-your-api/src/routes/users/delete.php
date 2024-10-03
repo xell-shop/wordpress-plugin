@@ -11,7 +11,7 @@ function CWWYA_router_user_delete(WP_REST_Request $request) {
 
 function CWWYA_on_load_router_user_delete()
 {
-    register_rest_route( 'cwwya', 'users/delete', array(
+    register_rest_route( CWWYA_RUTE, 'users/delete', array(
       'methods' => 'POST',
       'callback' => 'CWWYA_router_user_delete',
     ) );

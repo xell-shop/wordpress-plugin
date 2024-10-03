@@ -11,7 +11,7 @@ function CWWYA_router_product_delete(WP_REST_Request $request) {
 
 function CWWYA_on_load_router_product_delete()
 {
-    register_rest_route( 'cwwya', 'products/delete', array(
+    register_rest_route( CWWYA_RUTE, 'products/delete', array(
       'methods' => 'POST',
       'callback' => 'CWWYA_router_product_delete',
     ) );

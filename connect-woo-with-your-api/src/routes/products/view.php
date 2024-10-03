@@ -11,7 +11,7 @@ function CWWYA_router_product_view(WP_REST_Request $request) {
 
 function CWWYA_on_load_router_product_view()
 {
-    register_rest_route( 'cwwya', 'products/view', array(
+    register_rest_route( CWWYA_RUTE, 'products/view', array(
       'methods' => 'POST',
       'callback' => 'CWWYA_router_product_view',
     ) );

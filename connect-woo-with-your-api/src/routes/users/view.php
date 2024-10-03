@@ -11,7 +11,7 @@ function CWWYA_router_user_view(WP_REST_Request $request) {
 
 function CWWYA_on_load_router_user_view()
 {
-    register_rest_route( 'cwwya', 'users/view', array(
+    register_rest_route( CWWYA_RUTE, 'users/view', array(
       'methods' => 'POST',
       'callback' => 'CWWYA_router_user_view',
     ) );

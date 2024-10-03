@@ -34,7 +34,7 @@ function CWWYA_settings_page() {
 	$apis = CWWYA_get_option("apis");
 	$config = CWWYA_joinArrayObject($configDefault,$config);
 
-	$URL = get_site_url() . "/?rest_route=/cwwya/";
+	$URL = get_site_url() . "/?rest_route=/".CWWYA_RUTE."/";
 
     ?>
 
