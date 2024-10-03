@@ -19,9 +19,9 @@ function CWWYA_deleteUser($user_id)
         "user_delete" => $user_id
     );
 }
-function CWWYA_deleteUsers()
+function CWWYA_deleteUsers($data)
 {
-    $user_id = CWWYA_getPOST("user_id");
+    $user_id = $data["user_id"];
     if( empty( $user_id) ) {
         throw new Exception('user id Required');
     }

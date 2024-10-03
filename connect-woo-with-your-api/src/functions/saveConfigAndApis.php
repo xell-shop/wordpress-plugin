@@ -1,37 +1,43 @@
 <?php
 
 if ( ! defined( 'ABSPATH' ) ) exit;
-function CWWYA_saveConfigAndApis($data)
+function CWWYA_saveConfigAndApis()
 {
-    if($data["save"] == "Save"){
+    $SAVE = sanitize_text_field($_POST['save']);
+    if($SAVE == "Save"){
         $defaults = CWWYA_getConfigDefault();
         $configDefault = $defaults["configDefault"];
 
-        $data["config"] = CWWYA_joinArrayObject($configDefault,$data["config"]);
+        $CONFIG = CWWYA_sanitizeObj($_POST['config']);
 
-        if($data["config"]){
-            foreach ($data["config"] as $key => $value) {
+        $CONFIG = CWWYA_joinArrayObject($configDefault,$CONFIG);
+
+        if($CONFIG){
+            foreach ($CONFIG as $key => $value) {
                 if($value == "on"){
-                    $data["config"][$key] = true;
+                    $CONFIG[$key] = true;
                 }
                 if($value == "off"){
-                    $data["config"][$key] = false;
+                    $CONFIG[$key] = false;
                 }
             }
-            CWWYA_set_option("config",$data["config"]);
+            CWWYA_set_option("config",$CONFIG);
         }
-        if($data["api"]){
-            for ($i=0; $i < count($data["api"]); $i++) { 
-                foreach ($data["api"][$i]["permission"] as $key => $value) {
+
+        $API = CWWYA_sanitizeObj($_POST['api']);
+        
+        if($API){
+            for ($i=0; $i < count($API); $i++) { 
+                foreach ($API[$i]["permission"] as $key => $value) {
                     if($value == "on"){
-                        $data["api"][$i]["permission"][$key] = true;
+                        $API[$i]["permission"][$key] = true;
                     }
                     if($value == "off"){
-                        $data["api"][$i]["permission"][$key] = false;
+                        $API[$i]["permission"][$key] = false;
                     }
                 }
             }
-            $newsApi = $data["api"];
+            $newsApi = $API;
             $olds = CWWYA_get_option("apis");
 
             $newsApiD = $newsApi;
@@ -55,7 +61,7 @@ function CWWYA_saveConfigAndApis($data)
                     CWWYA_alertConnect($newsApiD[$i]);
                 }
             }
-            CWWYA_set_option("apis",$data["api"]);
+            CWWYA_set_option("apis",$API);
         }
     }
 }

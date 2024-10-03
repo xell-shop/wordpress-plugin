@@ -90,9 +90,9 @@ function CWWYA_putOrder($order)
     }
 }
 
-function CWWYA_putOrders()
+function CWWYA_putOrders($data)
 {
-    $newOrders = CWWYA_getPOST("orders");
+    $newOrders = $data["orders"];
     CWWYA_validate_postOrders($newOrders);
     $orders = [];
     for ($i=0; $i < count($newOrders); $i++) { 

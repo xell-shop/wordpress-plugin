@@ -18,10 +18,10 @@ function CWWYA_deleteProduct($product_id)
 
 }
 
-function CWWYA_deleteProducts()
+function CWWYA_deleteProducts($data)
 {
     
-    $product_id = CWWYA_getPOST("product_id");
+    $product_id = $data["product_id"];
     if( empty( $product_id) ) {
         throw new Exception('Product id Required');
     }

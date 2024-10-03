@@ -2,10 +2,11 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-function CWWYA_router_user_view() {
+function CWWYA_router_user_view(WP_REST_Request $request) {
     $permission = "user_ready";
     $run = "CWWYA_getUsers";
-    return CWWYA_router_base($permission,$run);
+    $data = CWWYA_sanitizeObj(json_decode($request->get_body(), true));
+    return CWWYA_router_base($permission,$run,$data);
 }
 
 function CWWYA_on_load_router_user_view()

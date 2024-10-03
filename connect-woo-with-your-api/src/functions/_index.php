@@ -18,4 +18,3 @@ require_once CWWYA_PATH . "src/functions/createTags.php";
 require_once CWWYA_PATH . "src/functions/uploadImg.php";
 require_once CWWYA_PATH . "src/functions/updateProduct.php";
 require_once CWWYA_PATH . "src/functions/validateConfigActive.php";
-require_once CWWYA_PATH . "src/functions/getPOST.php";

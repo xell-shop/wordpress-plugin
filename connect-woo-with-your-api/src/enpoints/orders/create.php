@@ -238,9 +238,9 @@ function CWWYA_postOrder($order)
         );
     }
 }
-function CWWYA_postOrders()
+function CWWYA_postOrders($data)
 {
-    $newOrders = CWWYA_getPOST("orders");
+    $newOrders = $data["orders"];
     CWWYA_validate_postOrders($newOrders);
     $orders = [];
     for ($i=0; $i < count($newOrders); $i++) { 

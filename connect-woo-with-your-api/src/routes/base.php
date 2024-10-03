@@ -1,13 +1,8 @@
 <?php
 
-function CWWYA_router_base($permission,$run) {
-    //file_get_contents It is necesary for get all data in api body
-    $data = CWWYA_sanitizeObj(json_decode(file_get_contents('php://input'), true));
+function CWWYA_router_base($permission,$run,$data) {
     header('Content-Type: application/json; charset=utf-8');
-    if(isset($data)){
-        $_POST = $data;
-    }
-    $token = CWWYA_getPOST("token");
+    $token = $data["token"];
 
     try {
         CWWYA_validateConfigActive();
@@ -18,7 +13,7 @@ function CWWYA_router_base($permission,$run) {
         if(!CWWYA_validatePermission($api,$permission)){
             throw new Exception('Permission denied');
         }
-        $result = $run();
+        $result = $run($data);
 
         echo wp_json_encode(array(
             "status" => 200,

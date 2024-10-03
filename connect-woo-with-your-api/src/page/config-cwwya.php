@@ -18,11 +18,13 @@ function CWWYA_register_settings() {
 
 function CWWYA_settings_page() {
 
-	if(CWWYA_getPOST('delete-api')!=null){
-		CWWYA_deleteApi(intval(CWWYA_getPOST('delete-api')));
+	$deleteApi = sanitize_text_field($_POST['delete-api']);
+
+	if( $deleteApi!=null  &&  $deleteApi!='' ){
+		CWWYA_deleteApi(intval($deleteApi));
 	}
 
-	CWWYA_saveConfigAndApis(CWWYA_getPOST());
+	CWWYA_saveConfigAndApis();
 
 	$defaults = CWWYA_getConfigDefault();
 

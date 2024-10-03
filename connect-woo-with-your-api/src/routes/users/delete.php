@@ -2,10 +2,11 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-function CWWYA_router_user_delete() {
+function CWWYA_router_user_delete(WP_REST_Request $request) {
     $permission = "user_delete";
     $run = "CWWYA_deleteUsers";
-    return CWWYA_router_base($permission,$run);
+    $data = CWWYA_sanitizeObj(json_decode($request->get_body(), true));
+    return CWWYA_router_base($permission,$run,$data);
 }
 
 function CWWYA_on_load_router_user_delete()

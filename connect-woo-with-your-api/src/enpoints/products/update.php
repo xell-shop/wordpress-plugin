@@ -1,8 +1,8 @@
 <?php
 
-function CWWYA_putProducts()
+function CWWYA_putProducts($data)
 {
-    $products = CWWYA_getPOST("products");
+    $products = $data["products"];
     if( empty($products) ) {
         throw new Exception('Products Required');
     }
