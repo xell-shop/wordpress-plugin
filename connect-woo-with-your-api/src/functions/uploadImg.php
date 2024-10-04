@@ -85,7 +85,7 @@ function CWWYA_upload_image($image_url, $attach_to_post = 0, $add_to_media = tru
     ));
 
     // Cerrar y eliminar el archivo temporal
-    fclose( $tmp );
+    // fclose( $tmp );
     wp_delete_file( $tmp_path );
     unset( $_FILES[basename( $tmp_path )] );
 
